@@ -1,4 +1,4 @@
-// use std::collections::HashMap;
+use std::collections::HashMap;
 
 fn mean(vec: &Vec<i32>)-> f32{
     let mut sum = 0;
@@ -29,21 +29,23 @@ fn median(vec: &mut Vec<i32>)-> f32{
     }
 }
 
-// fn mode(vec: &Vec<i32>)-> f32{
-    
-// }
+fn mode(vec: &Vec<i32>,map: &mut HashMap<i32,usize>)-> f32{
+    for &num in vec{
+        *map.entry(num).or_insert(0) +=1;
+    }
+ }
 
 
 fn main() {
-    let mut  vec = vec![1,2,3,4];
+    let mut  vec = vec![1,2,3,3,4];
     let vec_mean = mean(&vec);
     println!("The mean is {}.",vec_mean);
 
     let vec_median = median(&mut vec);
     println!("The median is {}.",vec_median);
 
-    // let mut map = HashMap::New();
+    let mut map = HashMap::New();
 
-    // let vec_median = median(&mut vec);
-    // println!("The median is {}.",vec_median);
+    let vec_mode = median(&mut vec, &mut map);
+    println!("The mode is {}.",vec_mode);
 }
