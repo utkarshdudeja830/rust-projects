@@ -1,22 +1,7 @@
 use std::env;
-
-struct Configs{
-    term: String,
-    filename: String,
-}
-
-impl Configs{    
-    
-    fn new(args: &[String])-> Configs{
-        if args.len() < 3 {
-            panic!("not enough arguments");
-        }   
-        let term = args[1].clone();
-        let filename = args[2].clone();
-        Configs{term, filename}
-    }
-}
-
+extern crate io;
+use std::process;
+use io::Configs;
 
 fn main(){
     let args: Vec<String> = env::args().collect();
@@ -25,5 +10,10 @@ fn main(){
         process::exit(1);
     });
     
-    println!("The file to search in {} \n the term to search for in {}", configs.filename, configs.term);
+    println!("The file to search in {} \n the term to search for in {}", configs.term, configs.filename);
+
+    if let Err(e) = io::run(configs){
+        println!("An error has occured: {}",e);
+        process::exit(1);
+    }
 }
