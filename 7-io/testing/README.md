@@ -2,4 +2,4 @@ In this folder there are 2 files first is the txt file to search from and second
 
 Usage:
 
-./bin hello hello.txt
+./io hello hello.txt
