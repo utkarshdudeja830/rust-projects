@@ -54,7 +54,7 @@ To ensure compatibility with Cargo, rename project directories by removing numer
 [package]
 name = "guessing_game"  # Update to match renamed directory
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 ```
 
 ## Overview
