@@ -57,7 +57,7 @@ version = "0.1.0"
 edition = "2021"
 ```
 
-## Theoretical Overview
+## Overview
 The projects progress from fundamental to advanced Rust concepts:
 - **Fundamentals**: Ownership, borrowing, and lifetimes ensure memory safety without a garbage collector (e.g., in `7-io` for file handling).
 - **Algorithms**: Basic algorithms like Fibonacci sequence (`3.2-nth_fibbonacci_number`) and statistical computations (`4.1-mean_median_mode`) showcase Rust's performance.
